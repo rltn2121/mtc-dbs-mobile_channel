@@ -1,0 +1,36 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap");
+/* CSS Document */
+
+html,
+body {
+  width: auto;
+  height: auto;
+  font-family: "Noto Sans KR", sans-serif;
+}
+a {
+  text-decoration-line: none;
+}
+.card {
+  box-shadow: -1px 15px 30px -10px black;
+}
+.card-s-bg:hover {
+  background-color: #3d4ca3;
+  cursor: pointer;
+  transition: all 1s ease;
+  transform: scale(1.04);
+}
+.card-footer {
+  justify-content: space-around;
+  text-align: center;
+  display: flex;
+  padding: 0px !important;
+}
+.card-footer div {
+  flex-grow: 1 !important;
+  border-right: 1px solid #dbdbdb;
+  padding: 50px 0;
+}
+.card-footer div:last-child {
+  border-right: none;
+}
