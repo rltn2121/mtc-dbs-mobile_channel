@@ -1,43 +1,50 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/css/style.css" />
-        <title>신한은행</title>
-        <script src="/js/common.js"></script>
-        <script src="/js/payment.js"></script>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>MTC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+  </head>
 
-    <body>
-        <div class="visual-area">
-            <div class="swiper js-swiper card-type" data-swiper-options="swiperOptions3" data-swiper-instance="mySwiper3">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <a href="javascript:;" onclick="goNextPage('');" role="button">
-                            <div class="visual type-trust">
-                                <div class="tit-wrap">
-                                    <span class="label-type">카드 영역</span>
-                                </div>
-                                <div class="text-area">
-                                    <h2 class="h1">
-                                        <em class="">카드명</em>
-                                        <em class="active">블라블라</em>
-                                        <em class="">블라블라</em>
-                                        <em class="active">잔액</em>
-                                    </h2>
-                                </div>
-                                <div class="with-subtxt-wrap">
-                                    <p class="slide-sub-text">
-                                        블라블라블라
-                                    </p>
-                                </div>
+  <body onload="init()">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="col-10">
+          <div class="row d-flex align-items-center">
+            <div class="col">
+              <div
+                class="card border-primary card-s-bg bg-dark"
+                onclick="showNextAccount()"
+              >
+                <img
+                  src="../images/card.png"
+                  class="card-img-top p-3"
+                  alt="..."
+                />
 
-                                <span class="visual-overlap-img"></span>
-                            </div>
-                        </a>
-                    </div>
+                <!-- 카드 내용 -->
+                <div class="card-footer bg-primary text-light">
+                  <div>
+                    <a href="#" onclick="goMain()" class="text-white"
+                      >결제취소</a
+                    >
+                  </div>
                 </div>
+              </div>
+              <!-- 카드 몸통-->
             </div>
+            <!-- col -->
+          </div>
         </div>
-    </body>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="/js/common.js"></script>
+  <script type="text/javascript" src="/js/home.js"></script>
 </html>
