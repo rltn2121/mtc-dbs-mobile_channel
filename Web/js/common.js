@@ -3,7 +3,7 @@
 */
 function goNextPage(pid) {
   var pid = pid;
-  location.href = "/web/" + pid + ".html";
+  location.href = "../web/" + pid + ".html";
 }
 
 function goMain() {

@@ -9,7 +9,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
   </head>
 
   <body onload="init()">
@@ -18,60 +18,60 @@
         <div class="col-10">
           <div class="row d-flex align-items-center">
             <div class="col">
-              <div
-                class="card border-primary card-s-bg"
-                onclick="showNextAccount()"
-              >
-                <img src="images/card.png" class="card-img-top p-3" alt="..." />
+              <div class="card border-primary">
                 <div class="card-body d-grid gap-3">
                   <div class="card-title text-start">
-                    <h2
+                    <br /><br />
+                    <h3
                       class="text-primary"
                       style="display: inline"
                       id="user"
-                    ></h2>
-                    <h2 style="display: inline">님의 트래블월렛</h2>
+                    ></h3>
+                    <h3 style="display: inline">님의 트래블월렛</h3>
+                    <br /><br /><br /><br /><br />
+                    <h1>충전할 금액을 지정해주세요</h1>
                   </div>
+                  <br /><br />
+                  <div>
+                    <img
+                      src="../images/korea.png"
+                      style="width: 6%; float: left"
+                    />
+                    <div class="card-text p-0 pb-3">
+                      <h4
+                        class="text-primary"
+                        style="display: inline-block"
+                        id="korCur"
+                      ></h4>
+                      <h4 style="display: inline-block" id="korAmount"></h4>
+                    </div>
+                  </div>
+                  <h2 class="text-end">계좌에서</h2>
                   <br />
-                  <figure class="text-end">
-                    <img src="" style="width: 6%" id="flag" />
-                  </figure>
-                  <div class="card-text text-end p-0 pb-3">
-                    <h4
-                      class="text-primary"
-                      style="display: inline"
-                      id="cur"
-                    ></h4>
-                    <h4 style="display: inline" id="amount"></h4>
+                  <div class="card-text p-0 pb-3">
+                    <select
+                      class="form-select form-select-lg mb-3"
+                      name="selectCur"
+                      style="width: 150px; float: left"
+                    >
+                      <option value="selectJPY">JPY</option>
+                      <option value="selectCNY">CNY</option>
+                      <option value="selectUSD" selected="selected">USD</option>
+                    </select>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg mb-3"
+                      style="width: 350px"
+                      id="userInput"
+                    />
                   </div>
+                  <h2 class="text-end">만큼 충전할게요</h2>
+                  <br /><br /><br />
+                  <a href="#" class="btn btn-primary p-3" onclick="doCharge()"
+                    >충전하기</a
+                  >
                 </div>
                 <!-- 카드 내용 -->
-                <div class="card-footer bg-primary text-light">
-                  <div>
-                    <a
-                      href="#"
-                      onclick="goNextPage('payment')"
-                      class="text-white"
-                      >결제</a
-                    >
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      onclick="goNextPage('transaction')"
-                      class="text-white"
-                      >거래내역</a
-                    >
-                  </div>
-                  <div>
-                    <a
-                      href="#"
-                      onclick="goNextPage('charge')"
-                      class="text-white"
-                      >충전내역</a
-                    >
-                  </div>
-                </div>
               </div>
               <!-- 카드 몸통-->
             </div>
@@ -81,6 +81,6 @@
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="/js/common.js"></script>
-  <script type="text/javascript" src="/js/home.js"></script>
+  <script type="text/javascript" src="../js/common.js"></script>
+  <script type="text/javascript" src="../js/charge.js"></script>
 </html>

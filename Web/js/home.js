@@ -31,7 +31,10 @@ async function getAccountList() {
   //   console.log(i);
   //   // console.log(localeAmount);
   // }
-  sessionStorage.setItem("amountList", list);
+  for (var i = 0; i < list.length; i++) {
+    sessionStorage.setItem("amountList" + i.toString(), Object.values(list[i]));
+  }
+
   setAccountInf();
 }
 /*
