@@ -38,3 +38,30 @@ a {
 .card-footer div:last-child {
   border-right: none;
 }
+.table-wrap {
+  overflow-x: scroll;
+}
+
+.table {
+  width: 100%;
+  background: #fff;
+}
+.table thead.thead-primary {
+  background: #1089ff;
+}
+.table thead th {
+  border: none;
+  padding: 20px 30px;
+  font-size: 18px;
+  color: #fff;
+}
+.table tbody tr {
+  margin-bottom: 10px;
+}
+.table tbody th,
+.table tbody td {
+  border: none;
+  padding: 20px 30px;
+  border-bottom: 3px solid #f8f9fd;
+  font-size: 16px;
+}

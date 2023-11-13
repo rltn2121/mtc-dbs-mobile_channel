@@ -17,6 +17,8 @@ function countDownTimer() {
     second--;
     if (second < 0) {
       clearInterval(timer);
+      alert("요청시간이 초과되었습니다. 홈 화면으로 이동합니다");
+      location.href = "../home.html";
       return;
     }
     document.getElementById("count").innerHTML = second;

@@ -12,7 +12,9 @@ function init() {
 */
 function callGet() {
   return new Promise((resolve, reject) => {
-    fetch("http://localhost:8080/wallet/498967108/all")
+    fetch(
+      "http://k8s-cocmtc-cocmtcin-52b788a054-1680572240.ap-northeast-2.elb.amazonaws.com/wallet/all/498967108"
+    )
       .then((response) => response.json())
       .then((data) => {
         resolve(data);

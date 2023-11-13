@@ -27,6 +27,7 @@
                   </div>
                   <div class="card-title text-end">
                     <br /><br />
+
                     <h3
                       class="text-primary"
                       style="display: inline"
@@ -35,16 +36,32 @@
                     <h3 style="display: inline">님의 트래블월렛</h3>
                     <br /><br /><br /><br /><br />
                   </div>
-                  <table class="table table-bordered">
-                    <thead class="thead-primary text-center">
-                      <th>일자</th>
-                      <th>결과</th>
-                      <th>통화</th>
-                      <th>금액</th>
-                      <th>잔액</th>
-                    </thead>
-                    <tbody id="histTable"></tbody>
-                  </table>
+                  <h1 class="text-start">충전할 금액을 지정해주세요</h1>
+                  <br /><br />
+                  <h2 class="text-end">계좌에서</h2>
+                  <br />
+                  <div class="card-text p-0 pb-3">
+                    <select
+                      class="form-select form-select-lg mb-3"
+                      id="selectCur"
+                      style="width: 150px; float: left"
+                    >
+                      <option value="JPY">JPY</option>
+                      <option value="CNY">CNY</option>
+                      <option value="USD" selected="selected">USD</option>
+                    </select>
+                    <input
+                      type="text"
+                      class="form-control form-control-lg mb-3"
+                      style="width: 350px"
+                      id="userInput"
+                    />
+                  </div>
+                  <h2 class="text-end">만큼 충전할게요</h2>
+                  <br /><br /><br />
+                  <a href="#" class="btn btn-primary p-3" onclick="doCharge()"
+                    >충전하기</a
+                  >
                 </div>
                 <!-- 카드 내용 -->
               </div>
@@ -57,5 +74,5 @@
     </div>
   </body>
   <script type="text/javascript" src="../js/common.js"></script>
-  <script type="text/javascript" src="../js/transaction.js"></script>
+  <script type="text/javascript" src="../js/charge.js"></script>
 </html>
