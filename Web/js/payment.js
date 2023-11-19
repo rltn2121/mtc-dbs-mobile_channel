@@ -173,6 +173,7 @@ function callPost() {
         showError("결제요청에 실패했습니다.");
       } else {
         //성공시
+        sessionStorage.setItem("payAcser", data.payAcser);
         goNextPage(ongoing);
       }
     });
@@ -193,12 +194,4 @@ function countDownTimer() {
   }
 
   timer = setInterval(showRemaining, 1000);
-}
-/*
-Error 셋팅
-*/
-function showError(msg) {
-  alert(msg);
-  goMain();
-  return;
 }

@@ -34,3 +34,11 @@ function isNull(chk) {
   if (chk == "" || chk == null || chk == undefined || chk == NaN) return true;
   return false;
 }
+/*
+Error 셋팅
+*/
+function showError(msg) {
+  alert(msg);
+  goMain();
+  return;
+}

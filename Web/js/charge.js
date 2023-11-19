@@ -13,10 +13,41 @@ function init() {
   document.getElementById("user").innerHTML = deaultInf[0];
   document.getElementById("korCur").innerHTML = "&nbsp;&nbsp;" + deaultInf[1];
   document.getElementById("korAmount").innerHTML =
-    "&nbsp;&nbsp;" +
-    deaultInf[2].toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+    "&nbsp;&nbsp;" + formattingAmt(deaultInf[2]);
 
   korAmt = Number(deaultInf[2]);
+}
+/*
+충전모듈 호출
+*/
+function callPost() {
+  fetch(
+    "http://k8s-cocmtc-cocmtcin-52b788a054-1680572240.ap-northeast-2.elb.amazonaws.com/exchange",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        acno: getUserName(),
+        payYn: "N",
+        curC: selectedCur,
+        trxAmt: Number(document.getElementById("userInput").value),
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      var data = data;
+
+      if (isNull(data.exgAcser) || data.result == -1) {
+        showError("환전요청에 실패했습니다.");
+      } else {
+        //성공시
+        sessionStorage.setItem("exgAcser", data.exgAcser);
+        goNextPage(ongoing);
+      }
+    });
 }
 /*
 버튼이벤트
@@ -26,9 +57,7 @@ function doCharge() {
   selectedCur = selectBox.options[selectBox.selectedIndex].value;
   userInput = Number(document.getElementById("userInput").value);
   if (validate()) {
-    const paramData = {};
-    localStorage.setItem("paramData", JSON.stringify(paramData));
-    location.href = "../web/charging.html"; //공통함수로 바꾸기
+    callPost();
   }
 }
 /* 입력값 검증 */
