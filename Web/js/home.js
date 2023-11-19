@@ -56,9 +56,7 @@ function setAccountInf() {
 
   document.getElementById("user").innerHTML = homeData[0];
   document.getElementById("cur").innerHTML = homeData[1];
-  document.getElementById("amount").innerHTML = homeData[2]
-    .toString()
-    .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","); //금액 3자리마다 , 찍기
+  document.getElementById("amount").innerHTML = formattingAmt(homeData[2]);
 
   var src = "";
   if (homeData[1] == "KRW") src = "images/korea.png";

@@ -148,8 +148,6 @@ function randomParam() {
 */
 function callPost() {
   var paramData = randomParam();
-  var list = sessionStorage.getItem("amountList0");
-  var deaultInf = list.split(",");
 
   fetch(
     "http://k8s-cocmtc-cocmtcin-52b788a054-1680572240.ap-northeast-2.elb.amazonaws.com/pay",
@@ -159,16 +157,25 @@ function callPost() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        acno: deaultInf[0],
+        acno: getUserName(),
         curC: paramData.curC,
         trxPlace: paramData.trxPlace,
-        trxAmt: Math.floor(Math.random() * (300000 - 100) + 1), //랜덤으로 금액 지정을 해줌
+        trxAmt: Math.floor(Math.random() * (200000 - 100) + 1), //랜덤으로 금액 지정을 해줌
         trxDt: paramData.trxDt,
       }),
     }
   )
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      var data = data;
+
+      if (isNull(data.payAcser)) {
+        showError("결제요청에 실패했습니다.");
+      } else {
+        //성공시
+        goNextPage(ongoing);
+      }
+    });
 }
 /*
 결제 타이머 기능
@@ -178,12 +185,20 @@ function countDownTimer() {
     second--;
     if (second < 0) {
       clearInterval(timer);
-      alert("요청시간이 초과되었습니다. 홈 화면으로 이동합니다");
-      location.href = "../home.html";
-      return;
+      showError("요청시간이 초과되었습니다. 홈 화면으로 이동합니다");
+    } else if (second == 28) {
+      callPost();
     }
     document.getElementById("count").innerHTML = second;
   }
 
   timer = setInterval(showRemaining, 1000);
+}
+/*
+Error 셋팅
+*/
+function showError(msg) {
+  alert(msg);
+  goMain();
+  return;
 }
