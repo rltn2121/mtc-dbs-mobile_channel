@@ -26,10 +26,19 @@ function doCharge() {
   selectedCur = selectBox.options[selectBox.selectedIndex].value;
   userInput = Number(document.getElementById("userInput").value);
   if (validate()) {
-    const paramData = {};
-    localStorage.setItem("paramData", JSON.stringify(paramData));
-    location.href = "../web/charging.html"; //공통함수로 바꾸기
+    callPost();
   }
+}
+/*
+충전 모듈 호출
+*/
+function callPost() {
+  console.log("callPost");
+  //   fetch("http://localhost:8080/wallet/498967108/all")
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       resolve(data);
+  //     });
 }
 /* 입력값 검증 */
 function validate() {
