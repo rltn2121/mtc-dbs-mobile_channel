@@ -7,7 +7,7 @@ function goNextPage(pid) {
 }
 
 function goMain() {
-  location.href = "../home.html";
+  location.href = "../index.html";
 }
 
 /*
