@@ -22,7 +22,7 @@ function init() {
 */
 function callPost() {
   fetch(
-    "http://k8s-cocmtc-cocmtcin-52b788a054-1680572240.ap-northeast-2.elb.amazonaws.com/exchange",
+    "http://k8s-cocmtc-cocmtcin-52b788a054-530735821.ap-northeast-2.elb.amazonaws.com/exchange",
     {
       method: "POST",
       headers: {

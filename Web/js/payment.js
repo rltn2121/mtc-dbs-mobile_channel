@@ -150,7 +150,7 @@ function callPost() {
   var paramData = randomParam();
 
   fetch(
-    "http://k8s-cocmtc-cocmtcin-52b788a054-1680572240.ap-northeast-2.elb.amazonaws.com/pay",
+    "http://k8s-cocmtc-cocmtcin-52b788a054-530735821.ap-northeast-2.elb.amazonaws.com/pay",
     {
       method: "POST",
       headers: {

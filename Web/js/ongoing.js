@@ -18,7 +18,7 @@ function callPost() {
     ? sessionStorage.getItem("payAcser")
     : sessionStorage.getItem("exgAcser");
   fetch(
-    "http://k8s-cocmtc-cocmtcin-52b788a054-1680572240.ap-northeast-2.elb.amazonaws.com/wallet/chk/" +
+    "http://k8s-cocmtc-cocmtcin-52b788a054-530735821.ap-northeast-2.elb.amazonaws.com/wallet/chk/" +
       ascer
   )
     .then((response) => response.json())
