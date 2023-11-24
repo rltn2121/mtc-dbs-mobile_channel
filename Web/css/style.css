@@ -43,7 +43,8 @@ a {
 }
 
 .table {
-  width: 100%;
+  height: auto;
+  width: auto;
   background: #fff;
 }
 .table thead.thead-primary {
@@ -51,7 +52,7 @@ a {
 }
 .table thead th {
   border: none;
-  padding: 20px 30px;
+  padding: 10px 20px;
   font-size: 18px;
   color: #fff;
 }

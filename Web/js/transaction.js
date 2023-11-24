@@ -14,9 +14,7 @@ function init() {
 */
 function callGet() {
   return new Promise((resolve, reject) => {
-    fetch(
-      "http://k8s-cocmtc-cocmtcin-52b788a054-530735821.ap-northeast-2.elb.amazonaws.com/wallet/history/498967108"
-    )
+    fetch(url + "/wallet/history/498967108")
       .then((response) => response.json())
       .then((data) => {
         resolve(data);

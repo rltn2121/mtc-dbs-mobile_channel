@@ -149,22 +149,19 @@ function randomParam() {
 function callPost() {
   var paramData = randomParam();
 
-  fetch(
-    "http://k8s-cocmtc-cocmtcin-52b788a054-530735821.ap-northeast-2.elb.amazonaws.com/pay",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        acno: getUserName(),
-        curC: paramData.curC,
-        trxPlace: paramData.trxPlace,
-        trxAmt: Math.floor(Math.random() * (200000 - 100) + 1), //랜덤으로 금액 지정을 해줌
-        trxDt: paramData.trxDt,
-      }),
-    }
-  )
+  fetch(url + "/pay", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      acno: getUserName(),
+      curC: paramData.curC,
+      trxPlace: paramData.trxPlace,
+      trxAmt: Math.floor(Math.random() * (200000 - 100) + 1), //랜덤으로 금액 지정을 해줌
+      trxDt: paramData.trxDt,
+    }),
+  })
     .then((response) => response.json())
     .then((data) => {
       var data = data;
@@ -172,9 +169,10 @@ function callPost() {
       if (isNull(data.payAcser)) {
         showError("결제요청에 실패했습니다.");
       } else {
+        // console.log(data.payAcser);
         //성공시
         sessionStorage.setItem("payAcser", data.payAcser);
-        goNextPage(ongoing);
+        goNextPage("ongoing");
       }
     });
 }

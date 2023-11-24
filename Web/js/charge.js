@@ -21,21 +21,18 @@ function init() {
 충전모듈 호출
 */
 function callPost() {
-  fetch(
-    "http://k8s-cocmtc-cocmtcin-52b788a054-530735821.ap-northeast-2.elb.amazonaws.com/exchange",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        acno: getUserName(),
-        payYn: "N",
-        curC: selectedCur,
-        trxAmt: Number(document.getElementById("userInput").value),
-      }),
-    }
-  )
+  fetch(url + "/exg", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      acno: getUserName(),
+      payYn: "N",
+      curC: selectedCur,
+      trxAmt: Number(document.getElementById("userInput").value),
+    }),
+  })
     .then((response) => response.json())
     .then((data) => {
       var data = data;
@@ -45,7 +42,7 @@ function callPost() {
       } else {
         //성공시
         sessionStorage.setItem("exgAcser", data.exgAcser);
-        goNextPage(ongoing);
+        goNextPage("ongoing");
       }
     });
 }
