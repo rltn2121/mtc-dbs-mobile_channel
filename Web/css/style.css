@@ -19,7 +19,7 @@ a {
   box-shadow: -1px 15px 30px -10px black;
 }
 .card-s-bg:hover {
-  background-color: #b0b0d4;
+  background-color: #d6d6ff;
   cursor: pointer;
   transition: all 1s ease;
   transform: scale(1.04);
